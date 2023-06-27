@@ -9,13 +9,11 @@ Modified under the terms of the Apache 2.0 license.
 First install with `npm i jsqrcode-ts`.
 
 ```
-import getReader from "jsqrcode-ts";
-
-const reader = getReader();
+import reader from "jsqrcode-ts";
 
 const canvasElement = document.getElementById("my-canvas");
 
-try {
-  const decoded_string = reader.decode(canvasElement);
-} catch {}
+reader.scan(canvasElement).then(decoded_text => {
+  // do what you want here
+});
 ```
